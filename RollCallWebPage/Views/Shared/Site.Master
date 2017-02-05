@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="../../Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.tablesorter.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#table").tablesorter();
+            $(".trContent").hover(function () {
+                $(this).css("background", "#e8eef4");
+            },
+            function () {
+                $(this).css("background", "#FFFFFF");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>
+                    点名系统</h1>
+            </div>
+            <div id="logindisplay">
+                <% Html.RenderPartial("LogOnUserControl"); %>
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>
+                        <%: Html.ActionLink("主页", "Index", "Home") %></li>
+                                            <li>
+                        <%: Html.ActionLink("编辑主页", "EditIndex", "Home")%></li>
+                    <%if (Page.User.IsInRole("SuperAdmin"))
+                      {%>
+                    <li>
+                        <%: Html.ActionLink("班级列表", "Index", "RollCall")%></li>
+                    <% } %>
+                                        <%if (Page.User.IsInRole("SuperAdmin"))
+                      {%>
+                    <li>
+                        <%: Html.ActionLink("编辑主页", "EditIndex", "Home")%></li>
+                    <% } %>
+                    <%if (Page.User.IsInRole("Admin"))
+                      {%>
+                    <li>
+                        <%: Html.ActionLink("负责班级", "ListInfo", "RollCall", new { id = Session["ClassID"] }, null)%></li>
+                    <% } %>
+                    <%if (Page.User.IsInRole("Teacher"))
+                      {%>
+                    <li>
+                        <%: Html.ActionLink("班级情况", "Index", "Teacher", new { id = Session["ClassID"], id2 = Session["CourseID"] }, null)%></li>
+                    <% } %>
+                    <%if (Page.User.IsInRole("Student"))
+                      {%>
+                    <li>
+                        <%: Html.ActionLink("我的班级", "MyClasses", "RollCall", new { id = Session["StudentNo"] }, null)%></li>
+                    <% } %>
+                    <li>
+                        <%: Html.ActionLink("关于", "About", "Home")%></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            <div id="footer">
+                <p>
+                    &copy; 2010 翟士丹@曲阜师范大学 zYz Team 火山软件小组
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

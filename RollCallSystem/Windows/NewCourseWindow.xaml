@@ -1,0 +1,32 @@
+﻿<Window x:Class="RollCallSystem.Windows.NewCourseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="新建课程" Height="106" Width="360" Background="{x:Null}" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" Topmost="True" AllowsTransparency="True" WindowStyle="None" FontFamily="/RollCallSystem;component/Fonts/#Microsoft YaHei" FontSize="16">
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{DynamicResource LoadAnim}"/>
+		</EventTrigger>
+	</Window.Triggers>
+	<Border x:Name="MainFrame" BorderBrush="{DynamicResource MainFrameBore}" BorderThickness="2" CornerRadius="4" Margin="0">
+		    		        	    	<Border.RenderTransform>
+    		<TransformGroup>
+    			<ScaleTransform/>
+    			<SkewTransform/>
+    			<RotateTransform/>
+    			<TranslateTransform/>
+    		</TransformGroup>
+    	</Border.RenderTransform>
+			<Grid x:Name="grid" Background="{DynamicResource BackgroundBrush}" MouseLeftButtonDown="grid_MouseLeftButtonDown">
+
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition/>
+    	</Grid.ColumnDefinitions>
+    	<TextBox x:Name="textBoxCourse" Margin="8,31,8,0" TextWrapping="NoWrap" Style="{DynamicResource TextBoxStyle}" Height="28" VerticalAlignment="Top" FontSize="16" TextOptions.TextFormattingMode="Display" KeyDown="textBoxCourse_KeyDown" />
+    	<Label Content="课程名：" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Top" TextOptions.TextFormattingMode="Display" FontSize="16" Foreground="White"/>
+    	<Button x:Name="btnOK" Content="确定" Margin="0,0,86,8" VerticalAlignment="Bottom" FontSize="16" TextOptions.TextFormattingMode="Display" Style="{DynamicResource ButtonStyle}" Height="29.277" HorizontalAlignment="Right" Width="74" Click="btnOK_Click" />
+    	<Button x:Name="btnCancle" Content="取消" Height="29.277" Margin="0,0,8,8" VerticalAlignment="Bottom" FontSize="16" TextOptions.TextFormattingMode="Display" HorizontalAlignment="Right" Width="74" Style="{DynamicResource ButtonStyle}" Click="btnCancle_Click" />
+        
+    </Grid>
+
+	</Border>
+</Window>

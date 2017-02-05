@@ -1,0 +1,3 @@
+﻿/*ALTER TABLE [dbo].[Record]
+    ADD CONSTRAINT [FK_Record_Course] FOREIGN KEY ([CourseID]) REFERENCES [dbo].[Course] ([ID]) ON DELETE NO ACTION ON UPDATE NO ACTION;*/
+

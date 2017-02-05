@@ -1,0 +1,33 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="RollCallSystem.Windows.NewStudentWindow"
+        Title="添加学生信息" Height="112" Width="321" Background="{x:Null}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" Loaded="Window_Loaded" AllowsTransparency="True" WindowStyle="None" FontFamily="/RollCallSystem;component/Fonts/#Microsoft YaHei" FontSize="16">
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{DynamicResource LoadAnim}"/>
+		</EventTrigger>
+	</Window.Triggers>
+	<Border x:Name="MainFrame" BorderBrush="{DynamicResource MainFrameBore}" BorderThickness="2" CornerRadius="4" Margin="0">
+		    
+					        	    	<Border.RenderTransform>
+    		<TransformGroup>
+    			<ScaleTransform/>
+    			<SkewTransform/>
+    			<RotateTransform/>
+    			<TranslateTransform/>
+    		</TransformGroup>
+    	</Border.RenderTransform>
+		<Grid x:Name="grid" Margin="0" Background="{DynamicResource BackgroundBrush}" MouseLeftButtonDown="grid_MouseLeftButtonDown">
+
+    	<TextBox x:Name="textBoxNo" Margin="8,31,0,0" TextWrapping="NoWrap" Style="{DynamicResource TextBoxStyle}" Height="28" VerticalAlignment="Top" FontSize="16" TextOptions.TextFormattingMode="Display" d:LayoutOverrides="HorizontalAlignment" HorizontalAlignment="Left" Width="145" TabIndex="0" />
+    	<Label Content="学号：" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" TextOptions.TextFormattingMode="Display" FontSize="16" Foreground="White"/>
+    	<Button x:Name="btnOK" Content="确定" Margin="0,0,82,17" FontSize="16" TextOptions.TextFormattingMode="Display" Style="{DynamicResource ButtonStyle}" Click="btnOK_Click" Height="25" VerticalAlignment="Bottom" Width="70" HorizontalAlignment="Right" d:LayoutOverrides="Width" />
+    	<Button x:Name="btnCancle" Content="取消" Margin="0,0,8,17" FontSize="16" TextOptions.TextFormattingMode="Display" HorizontalAlignment="Right" Width="70" Style="{DynamicResource ButtonStyle}" Click="btnCancle_Click" Height="25" VerticalAlignment="Bottom" />
+    	<TextBox x:Name="textBoxName" Margin="162,31,8,0" TextWrapping="NoWrap" Style="{DynamicResource TextBoxStyle}" Height="28" VerticalAlignment="Top" FontSize="16" TextOptions.TextFormattingMode="Display" Width="145" TabIndex="1" KeyDown="textBoxName_KeyDown" />
+    	<Label Content="姓名：" Margin="161,8,94,0" VerticalAlignment="Top" TextOptions.TextFormattingMode="Display" FontSize="16" Foreground="White"/>
+        
+    </Grid>
+
+	</Border>
+</Window>

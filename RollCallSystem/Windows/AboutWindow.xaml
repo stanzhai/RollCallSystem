@@ -1,0 +1,27 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="RollCallSystem.Windows.AboutWindow"
+        Title="关于点名系统" Height="147" Width="357" Icon="/RollCallSystem;component/Images/about.ico" Background="{x:Null}" AllowsTransparency="True" WindowStyle="None" FontSize="16" Foreground="White" FontFamily="/RollCallSystem;component/Fonts/#Microsoft YaHei">
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{DynamicResource LoadAnim}"/>
+		</EventTrigger>
+	</Window.Triggers>
+	<Border x:Name="MainFrame" BorderBrush="{DynamicResource MainFrameBore}" BorderThickness="2" CornerRadius="4" Margin="0">
+		    		        	    	<Border.RenderTransform>
+    		<TransformGroup>
+    			<ScaleTransform/>
+    			<SkewTransform/>
+    			<RotateTransform/>
+    			<TranslateTransform/>
+    		</TransformGroup>
+    	</Border.RenderTransform>
+			<Grid x:Name="grid" Background="{DynamicResource BackgroundBrush}" MouseLeftButtonDown="grid_MouseLeftButtonDown">
+				<Image Margin="0,-0.3,0,8.3" Source="/RollCallSystem;component/Images/team.png" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Right" Width="139"/>
+				<Button x:Name="btnEnd" Content="×" HorizontalAlignment="Right" Height="30" Margin="0,8,8,0" VerticalAlignment="Top" Width="30" Style="{DynamicResource ButtonStyle}" FontSize="21.333" Click="btnEnd_Click" />
+				<TextBlock HorizontalAlignment="Left" Margin="8.823,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290.177"><Run Language="zh-cn" Text="软件名：点名系统"/><LineBreak/><Run Language="zh-cn" Text="软件版本：v 3.0"/><LineBreak/><Run Language="zh-cn" Text="作者：翟士丹@曲阜师范大学 zYz Team 火山软件小组"/><LineBreak/><Run Language="zh-cn" Text="联系方式：jazzdan@jazzdan.co.cc"/><LineBreak/><Run Language="zh-cn" Text="版权信息：GNU GPL，2010.10"/></TextBlock>
+			</Grid>
+
+	</Border>
+</Window>

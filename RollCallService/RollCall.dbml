@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_RollCall" Class="RollCallDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=DB_RollCall;Integrated Security=True;Pooling=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_RollCallConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ClassInfo" Member="ClassInfo">
+    <Type Name="ClassInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Admin" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Association Name="ClassInfo_Course" Member="Course" ThisKey="ID" OtherKey="ClassID" Type="Course" />
+      <Association Name="ClassInfo_RecordIndex" Member="RecordIndex" ThisKey="ID" OtherKey="ClassID" Type="RecordIndex" />
+      <Association Name="ClassInfo_Student_Class" Member="Student_Class" ThisKey="ID" OtherKey="ClassID" Type="Student_Class" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Course" Member="Course">
+    <Type Name="Course">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClassID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Association Name="Course_RecordIndex" Member="RecordIndex" ThisKey="ID" OtherKey="CourseID" Type="RecordIndex" />
+      <Association Name="ClassInfo_Course" Member="ClassInfo" ThisKey="ClassID" OtherKey="ID" Type="ClassInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Record" Member="Record">
+    <Type Name="Record">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StudentNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Record" Member="Record1" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IndexID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Association Name="RecordIndex_Record" Member="RecordIndex" ThisKey="IndexID" OtherKey="ID" Type="RecordIndex" IsForeignKey="true" />
+      <Association Name="Student_Record" Member="Student" ThisKey="StudentNo" OtherKey="No" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecordIndex" Member="RecordIndex">
+    <Type Name="RecordIndex">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RecordIndex_Record" Member="Record" ThisKey="ID" OtherKey="IndexID" Type="Record" />
+      <Association Name="ClassInfo_RecordIndex" Member="ClassInfo" ThisKey="ClassID" OtherKey="ID" Type="ClassInfo" IsForeignKey="true" />
+      <Association Name="Course_RecordIndex" Member="Course" ThisKey="CourseID" OtherKey="ID" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Student">
+    <Type Name="Student">
+      <Column Name="No" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Association Name="Student_Record" Member="Record" ThisKey="No" OtherKey="StudentNo" Type="Record" />
+      <Association Name="Student_Student_Class" Member="Student_Class" ThisKey="No" OtherKey="StudentNo" Type="Student_Class" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student_Class" Member="Student_Class">
+    <Type Name="Student_Class">
+      <Column Name="StudentNo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClassID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="ClassInfo_Student_Class" Member="ClassInfo" ThisKey="ClassID" OtherKey="ID" Type="ClassInfo" IsForeignKey="true" />
+      <Association Name="Student_Student_Class" Member="Student" ThisKey="StudentNo" OtherKey="No" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

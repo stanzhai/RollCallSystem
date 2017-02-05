@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Course]
+    ADD CONSTRAINT [FK_Course_ClassInfo] FOREIGN KEY ([ClassID]) REFERENCES [dbo].[ClassInfo] ([ID]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+

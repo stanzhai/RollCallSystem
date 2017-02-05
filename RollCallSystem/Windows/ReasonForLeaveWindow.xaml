@@ -1,0 +1,30 @@
+﻿<Window x:Class="RollCallSystem.Windows.ReasonForLeaveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ReasonForLeaveWindow" Height="103" Width="359" Background="{x:Null}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Topmost="True" AllowsTransparency="True" WindowStyle="None" FontFamily="/RollCallSystem;component/Fonts/#Microsoft YaHei" FontSize="16">
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{DynamicResource LoadAnim}"/>
+		</EventTrigger>
+	</Window.Triggers>
+	<Border x:Name="MainFrame" BorderBrush="{DynamicResource MainFrameBore}" BorderThickness="2" CornerRadius="4" Margin="0" >
+		    		        	    	<Border.RenderTransform>
+    		<TransformGroup>
+    			<ScaleTransform/>
+    			<SkewTransform/>
+    			<RotateTransform/>
+    			<TranslateTransform/>
+    		</TransformGroup>
+    	</Border.RenderTransform>
+			<Grid x:Name="grid" Background="{DynamicResource BackgroundBrush}" MouseLeftButtonDown="grid_MouseLeftButtonDown">
+
+    	<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="14.667" TextOptions.TextFormattingMode="Display" Name="textBlockReason"><Run Language="zh-cn" Text="请假理由："/></TextBlock>
+    	<TextBox Height="24" Margin="8,30,8,0" TextWrapping="Wrap" VerticalAlignment="Top" Style="{DynamicResource TextBoxStyle}" Name="textBoxReason" />
+    	<Button Content="确定" HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="83" Style="{DynamicResource ButtonStyle}" Height="28" FontSize="14.667" TextOptions.TextFormattingMode="Display" Name="btnOK" Click="btnOK_Click" />
+    	<Button Content="生病" HorizontalAlignment="Left" Margin="8,0,0,8" VerticalAlignment="Bottom" Width="83" Style="{DynamicResource ButtonStyle}" Height="28" FontSize="14.667" TextOptions.TextFormattingMode="Display" Name="btnIll" Click="btnIll_Click" />
+    	<Button Content="回家" Margin="95,0,173,8" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle}" Height="28" FontSize="14.667" TextOptions.TextFormattingMode="Display" Name="btnHome" Click="btnHome_Click" />
+        
+    </Grid>
+
+	</Border>
+</Window>

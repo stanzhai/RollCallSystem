@@ -1,0 +1,48 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="RollCallSystem.Windows.DataWindow"
+        Title="数据管理" Height="176" Width="473" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="/RollCallSystem;component/Images/data.ico" Background="{x:Null}" Loaded="Window_Loaded" AllowsTransparency="True" WindowStyle="None" xmlns:my="clr-namespace:RollCallSystem.Codes" FontFamily="/RollCallSystem;component/Fonts/#Microsoft YaHei" FontSize="16">
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{DynamicResource LoadAnim}"/>
+		</EventTrigger>
+	</Window.Triggers>
+	<Border x:Name="MainFrame" BorderBrush="{DynamicResource MainFrameBore}" BorderThickness="1" CornerRadius="4" Margin="0">
+		    		        	    	<Border.RenderTransform>
+    		<TransformGroup>
+    			<ScaleTransform/>
+    			<SkewTransform/>
+    			<RotateTransform/>
+    			<TranslateTransform/>
+    		</TransformGroup>
+    	</Border.RenderTransform>
+			<Canvas Margin="0" Background="{DynamicResource BackgroundBrush}" MouseLeftButtonDown="grid_MouseLeftButtonDown">
+
+    	<GroupBox Header="点名记录管理" Canvas.Left="8" Canvas.Top="8" Height="96.837" Width="447" Foreground="White" FontSize="14.667" BorderThickness="1">
+    		<Canvas Margin="0">
+    			<ComboBox Canvas.Left="8" Canvas.Top="8" Width="419" Style="{DynamicResource ComboBoxStyle}" Name="comboBoxRecords">
+    				<Path Data="M221,10.643333 C217.08503,43.268064 213.87885,79.375848 207,110.64333" Height="102" Stretch="Fill" Stroke="Black" StrokeThickness="2" Width="16"/>
+    			</ComboBox>
+    			<Button Content="删除选中的记录" Canvas.Left="290" Canvas.Top="37.357" Width="137" Style="{DynamicResource ButtonStyle}" Height="27.643" Name="btnDelete" Click="btnDelete_Click" FontSize="16" />
+                </Canvas>
+    	</GroupBox>
+    	<Button Content="将数据同步到服务器" Canvas.Left="8" Canvas.Top="135.357" Width="168" Style="{DynamicResource ButtonStyle}" Height="27.643" Name="btnSync" Click="btnSync_Click" FontSize="16" />
+    	<Path Data="M11,120 L453,122" Height="4" Canvas.Left="8" Stretch="Fill" StrokeThickness="3" Canvas.Top="119" Width="451">
+    		<Path.Stroke>
+    			<LinearGradientBrush EndPoint="0.497,4.012" StartPoint="0.5,0">
+    				<GradientStop Color="#7F000000" Offset="0"/>
+    				<GradientStop Color="#66FFFFFF" Offset="1"/>
+    			</LinearGradientBrush>
+    		</Path.Stroke>
+    	</Path>
+            <Button Content="退出" Canvas.Left="412" Canvas.Top="135.357" Width="51" Style="{DynamicResource ButtonStyle}" Height="27.643" x:Name="btnEnd" FontSize="16" Click="btnEnd_Click" />
+        <Button Content="清空数据" Canvas.Left="326" Canvas.Top="135.357" Width="78" Style="{DynamicResource ButtonStyle}" Height="27.643" x:Name="btnClearData" FontSize="16" Click="btnClearData_Click" />
+            <StackPanel Height="22.837" Canvas.Left="179" Canvas.Top="138" Width="143" Orientation="Horizontal" Name="upload" Visibility="Hidden">
+                <my:GIFImage Height="18" x:Name="gif" Stretch="None" Width="22" />
+                <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White"><Run Language="zh-cn" Text="上传中,请稍后……" /></TextBlock>
+            </StackPanel>
+        </Canvas>
+
+	</Border>
+</Window>

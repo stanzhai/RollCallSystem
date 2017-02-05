@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RollCallService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8888/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8888/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRollCallService_sendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendEmail" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_sendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_checkUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkUser" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_checkUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:addClass" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:addStudent" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:addCourse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addRecordIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:addRecordIndex" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addRecordIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addRecordIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:addRecord" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_addRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_isClassExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:isClassExist" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_isClassExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isClassExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_updateClassInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateClassInfo" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_updateClassInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateClassInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_updateStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateStudent" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_updateStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_updateCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateCourse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_updateCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_updateRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecord" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_updateRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_deleteStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteStudent" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_deleteStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_deleteCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCourse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_deleteCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_deleteRecordIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRecordIndex" />
+  </wsdl:message>
+  <wsdl:message name="IRollCallService_deleteRecordIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRecordIndexResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRollCallService">
+    <wsdl:operation name="sendEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/sendEmail" message="tns:IRollCallService_sendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/sendEmailResponse" message="tns:IRollCallService_sendEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/checkUser" message="tns:IRollCallService_checkUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/checkUserResponse" message="tns:IRollCallService_checkUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/addClass" message="tns:IRollCallService_addClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/addClassResponse" message="tns:IRollCallService_addClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/addStudent" message="tns:IRollCallService_addStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/addStudentResponse" message="tns:IRollCallService_addStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/addCourse" message="tns:IRollCallService_addCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/addCourseResponse" message="tns:IRollCallService_addCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addRecordIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/addRecordIndex" message="tns:IRollCallService_addRecordIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/addRecordIndexResponse" message="tns:IRollCallService_addRecordIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/addRecord" message="tns:IRollCallService_addRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/addRecordResponse" message="tns:IRollCallService_addRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isClassExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/isClassExist" message="tns:IRollCallService_isClassExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/isClassExistResponse" message="tns:IRollCallService_isClassExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateClassInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/updateClassInfo" message="tns:IRollCallService_updateClassInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/updateClassInfoResponse" message="tns:IRollCallService_updateClassInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/updateStudent" message="tns:IRollCallService_updateStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/updateStudentResponse" message="tns:IRollCallService_updateStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/updateCourse" message="tns:IRollCallService_updateCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/updateCourseResponse" message="tns:IRollCallService_updateCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/updateRecord" message="tns:IRollCallService_updateRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/updateRecordResponse" message="tns:IRollCallService_updateRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/deleteStudent" message="tns:IRollCallService_deleteStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/deleteStudentResponse" message="tns:IRollCallService_deleteStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/deleteCourse" message="tns:IRollCallService_deleteCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/deleteCourseResponse" message="tns:IRollCallService_deleteCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecordIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRollCallService/deleteRecordIndex" message="tns:IRollCallService_deleteRecordIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRollCallService/deleteRecordIndexResponse" message="tns:IRollCallService_deleteRecordIndex_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IRollCallService" type="tns:IRollCallService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendEmail">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/sendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUser">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/checkUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addClass">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/addClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStudent">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/addStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCourse">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/addCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRecordIndex">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/addRecordIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRecord">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/addRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isClassExist">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/isClassExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClassInfo">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/updateClassInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateStudent">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/updateStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCourse">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/updateCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRecord">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/updateRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteStudent">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/deleteStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCourse">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/deleteCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecordIndex">
+      <soap:operation soapAction="http://tempuri.org/IRollCallService/deleteRecordIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RollCallService">
+    <wsdl:port name="BasicHttpBinding_IRollCallService" binding="tns:BasicHttpBinding_IRollCallService">
+      <soap:address location="http://localhost:8888/RollCallService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

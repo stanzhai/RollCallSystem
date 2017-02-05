@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RollCall">
+  <DataContextMoniker Name="/RollCallDataContext" />
+  <nestedChildShapes>
+    <classShape Id="85e156b3-9a9e-4b56-9ab4-747e12b29198" absoluteBounds="4, 1, 2, 1.7625655110677081">
+      <DataClassMoniker Name="/RollCallDataContext/ClassInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94187636-3a53-4eab-932d-17118c4f02a2" absoluteBounds="4.015, 1.46, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4b7e76b-a8e9-4094-8e58-81c394f5e52c" absoluteBounds="4.125, 3.875, 2, 1.3805261230468751">
+      <DataClassMoniker Name="/RollCallDataContext/Course" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4eb21e3-c04a-44b6-9771-aa50af863004" absoluteBounds="4.14, 4.335, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.65625 : 2.76256551106771); (5.65625 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RollCallDataContext/ClassInfo/ClassInfo_Course" />
+      <nodes>
+        <classShapeMoniker Id="85e156b3-9a9e-4b56-9ab4-747e12b29198" />
+        <classShapeMoniker Id="c4b7e76b-a8e9-4094-8e58-81c394f5e52c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cdcec095-46c5-419e-b46e-c7103ea62f3d" absoluteBounds="7.375, 2.125, 2, 1.7625655110677081">
+      <DataClassMoniker Name="/RollCallDataContext/Record" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ace8dc2-1fc0-4ea9-abc8-c7c98fb12710" absoluteBounds="7.39, 2.585, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5600f33a-6e87-4a71-9320-a84958e2ce63" absoluteBounds="6.5, 4.625, 2, 1.5715458170572916">
+      <DataClassMoniker Name="/RollCallDataContext/RecordIndex" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64b82090-2c94-485f-9951-5e9bc046f2d7" absoluteBounds="6.515, 5.085, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.9375 : 4.625); (7.9375 : 3.88756551106771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RollCallDataContext/RecordIndex/RecordIndex_Record" />
+      <nodes>
+        <classShapeMoniker Id="5600f33a-6e87-4a71-9320-a84958e2ce63" />
+        <classShapeMoniker Id="cdcec095-46c5-419e-b46e-c7103ea62f3d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 1.53125); (6.90625 : 1.53125); (6.90625 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RollCallDataContext/ClassInfo/ClassInfo_RecordIndex" />
+      <nodes>
+        <classShapeMoniker Id="85e156b3-9a9e-4b56-9ab4-747e12b29198" />
+        <classShapeMoniker Id="5600f33a-6e87-4a71-9320-a84958e2ce63" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 4.94026306152344); (6.5 : 4.94026306152344)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RollCallDataContext/Course/Course_RecordIndex" />
+      <nodes>
+        <classShapeMoniker Id="c4b7e76b-a8e9-4094-8e58-81c394f5e52c" />
+        <classShapeMoniker Id="5600f33a-6e87-4a71-9320-a84958e2ce63" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4c47783f-6a0b-45dd-8877-b8dcffdce94b" absoluteBounds="3.375, 5.875, 2, 1.1895064290364583">
+      <DataClassMoniker Name="/RollCallDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6291da2-6539-440f-bafe-3e1630a8af24" absoluteBounds="3.39, 6.335, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 6.66177612304687); (8.96875 : 6.66177612304687); (8.96875 : 3.88756551106771)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RollCallDataContext/Student/Student_Record" />
+      <nodes>
+        <classShapeMoniker Id="4c47783f-6a0b-45dd-8877-b8dcffdce94b" />
+        <classShapeMoniker Id="cdcec095-46c5-419e-b46e-c7103ea62f3d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="87ab85b7-a159-4995-8829-783fc3e960cb" absoluteBounds="0.5, 2.5, 2, 1.1895064290364583">
+      <DataClassMoniker Name="/RollCallDataContext/Student_Class" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf3ce012-5257-4dc8-a45c-3bcdc5e5ab37" absoluteBounds="0.51500000000000012, 2.96, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 1.7499995); (1.5 : 1.7499995); (1.5 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RollCallDataContext/ClassInfo/ClassInfo_Student_Class" />
+      <nodes>
+        <classShapeMoniker Id="85e156b3-9a9e-4b56-9ab4-747e12b29198" />
+        <classShapeMoniker Id="87ab85b7-a159-4995-8829-783fc3e960cb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.65625 : 5.875); (3.65625 : 3.25728597005208); (2.5 : 3.25728597005208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RollCallDataContext/Student/Student_Student_Class" />
+      <nodes>
+        <classShapeMoniker Id="4c47783f-6a0b-45dd-8877-b8dcffdce94b" />
+        <classShapeMoniker Id="87ab85b7-a159-4995-8829-783fc3e960cb" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

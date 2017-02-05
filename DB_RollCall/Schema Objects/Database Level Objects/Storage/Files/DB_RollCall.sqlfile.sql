@@ -1,0 +1,5 @@
+﻿ALTER DATABASE [$(DatabaseName)]
+    ADD FILE (NAME = [DB_RollCall], FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA\DB_RollCall.mdf', SIZE = 2304 KB, FILEGROWTH = 1024 KB) TO FILEGROUP [PRIMARY];
+
+
+

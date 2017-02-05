@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RollCallDataContext" EntityNamespace="RollCallSystem" ContextNamespace="RollCallSystem" Class="RollCallDataContext" BaseType="DbLinq.Data.Linq.DataContext" Provider="Sqlite" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="main.Course" Member="Course">
+    <Type Name="Course" />
+  </Table>
+  <Table Name="main.Record" Member="Record">
+    <Type Name="Record" />
+  </Table>
+  <Table Name="main.Settings" Member="Settings">
+    <Type Name="Settings" />
+  </Table>
+  <Table Name="main.Student" Member="Student">
+    <Type Name="Student" />
+  </Table>
+</Database>
